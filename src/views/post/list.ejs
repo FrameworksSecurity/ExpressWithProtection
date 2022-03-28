@@ -45,7 +45,7 @@
               <label>Post description:</label>
               <textarea class="form-control" name="description" required rows="3" placeholder="Enter description"></textarea>
             </div>
-            <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+            <input type="hidden" name="_csrf" value="<%= data.csrfToken %>"> 
             <button type="submit" class="btn btn-primary">Submit</button>
           </form>
         </div>

@@ -7,6 +7,8 @@ import router from './routes/index';
 
 const port = 8000;
 const app = express();
+const cookieParser = require('cookie-parser'); 
+app.use(cookieParser());
 app.use(express.static('public'));
 app.use(expressEjsLayouts);
 app.set('layout', 'layouts/master');

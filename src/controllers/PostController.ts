@@ -7,6 +7,7 @@ export default class PostController {
     data["title"] = "Posts";
     data["description"] = "List of posts";
     data["posts"] = await Post.findAll();
+    data["csrfToken"] = req.csrfToken();
     if(req.session.error){
       data["messageError"] = req.session.error;
       req.session.error = null;
@@ -42,7 +43,7 @@ export default class PostController {
     }
     catch (e) {
       req.session.error = e.errors[0].message;
-      res.redirect('/posts',{ csrfToken: req.csrfToken() });
+      res.redirect('/posts');
     }
   }
 
